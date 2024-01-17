@@ -57,7 +57,8 @@ print(banner_message)
 
 # Using title methods, print the number vehicles in alphabetical order, with the year and available colors.
 
-
+sorted_models = sorted(audi_models)
+print(sorted_models + audi_colors)
 
 # Create a variable that calculates a monthly payment (no interest) for 5yr/60months for the first vehicle
 
@@ -68,18 +69,18 @@ monthly_payment_no_interest = msrp_first_vehicle / loan_duration_months
 
 # and print that in a nice, kind message. Don't be rude/pushy to the customer :)
 
-print(f"Five months payment (No Interest) Audi A3: ${monthly_payment_no_interest:.2f}")
+print(f"Five months payment (No Interest) Audi A3 for just ${monthly_payment_no_interest:}!")
 
 # Do the same thing, but give them 4yr and 6yr options for the same vehicle
 
 loan_duration_months = MONTHS_IN_4_YEARS
 monthly_payment_no_interest = msrp_first_vehicle / loan_duration_months
-print(f"Four months payment (No Interest) Audi A3: ${monthly_payment_no_interest:.2f}")
+print(f"Four months payment (No Interest) Audi A3 for just ${monthly_payment_no_interest:}!")
 
 
 loan_duration_months = MONTHS_IN_6_YEARS
 monthly_payment_no_interest = msrp_first_vehicle / loan_duration_months
-print(f"Six months payment (No Interest) Audi A3: ${monthly_payment_no_interest:.2f}")
+print(f"Six months payment (No Interest) Audi A3 for just ${monthly_payment_no_interest:}!")
 
 # Lastly, give them a 5yr option for each of the other vehicles, just to see if they are interested
 
@@ -87,17 +88,16 @@ loan_duration_months = MONTHS_IN_5_YEARS
 
 msrp_second_vehicle = MSRP_Q3
 monthly_payment_no_interest = msrp_second_vehicle / loan_duration_months
-print(f"Five months payment (No Interest) Audi Q3: ${monthly_payment_no_interest:.2f}")
+print(f"Five months payment (No Interest) Audi Q3 for just ${monthly_payment_no_interest:}!")
 
 msrp_third_vehicle = MSRP_A4
 monthly_payment_no_interest = msrp_third_vehicle / loan_duration_months
-print(f"Five months payment (No Interest) Audi A4: ${monthly_payment_no_interest:.2f}")
+print(f"Five months payment (No Interest) Audi A4 for just ${monthly_payment_no_interest:}!")
 
 msrp_fourth_vehicle = MSRP_Q5
 monthly_payment_no_interest = msrp_fourth_vehicle / loan_duration_months
-print(f"Five months payment (No Interest) Audi Q5: ${monthly_payment_no_interest:.2f}")
+print(f"Five months payment (No Interest) Audi Q5 for just ${monthly_payment_no_interest:}!")
 
 msrp_fifth_vehicle = MSRP_A8
 monthly_payment_no_interest = msrp_fifth_vehicle / loan_duration_months
-print(f"Five months payment (No Interest) Audi Q8: ${monthly_payment_no_interest:.2f}")
-
+print(f"Five months payment (No Interest) Audi Q8 for just ${monthly_payment_no_interest:}!")
