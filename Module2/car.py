@@ -49,7 +49,11 @@ welcome_message = f"Welcome to our new car store, {guest_name}! Take a look at o
 
 # Create awesome banner with your brand/name/dealership, however you want to welcome customers
 
-banner_message = f"\t\t\t{guest_name}\n\t\tWelcome to the Future of Cars\n\tDiscover Innovation, Luxury, and Performance!"
+banner_message ="  ,---.  ,--. ,--.,------.  ,--.\n" \
+              " /  O  \ |  | |  ||  .-.  \ |  |\n" \
+              "|  .-.  ||  | |  ||  |  \  :|  |\n" \
+              "|  | |  |'  '-'  '|  '--'  /|  |\n" \
+                " --' `--' `-----' `-------' `--'\n"
 
 # Print awesome banner and welcome message
 
