@@ -1,4 +1,4 @@
-#Written by Tiago Perez
+#Wrote by Tiago Perez
 
 # Pizzas
 pizzas = ['Margherita', 'Pepperoni', 'Vegetarian']
@@ -30,7 +30,6 @@ for number in range(1, 1000001):
 
 # Summing a million
 
-# Find the minimum and maximum values within the range from 1 to 1,000,000
 
 minimum = min(range(1, 1000001))
 maximum = max(range(1, 1000001))
@@ -73,6 +72,7 @@ print(f"The first three items of this list are:{cubes[:3]}")
 print(f"The last three items of this list are:{cubes[-3:]}")
 
 # My pizzas, your pizzas
+
 pizzas.append('Pepperoni')
 
 for pizza in pizzas:
