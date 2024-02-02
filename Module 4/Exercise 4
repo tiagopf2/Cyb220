@@ -1,1 +1,222 @@
 # Written by Tiago Perez
+
+# Dictionaries 1
+
+messi_dictionary = {
+    'f_name': 'Lionel',
+    'l_name': 'Messi',
+    'age': 36,
+    'hometown': 'Rosario',
+    'current_city': 'Miami',
+    'username': 'lm10_legend'
+}
+print(messi_dictionary)
+print()
+
+print("First Name:", messi_dictionary['f_name'])
+print("Last Name:", messi_dictionary['l_name'])
+print("Age:", messi_dictionary['age'])
+print("Hometown:", messi_dictionary['hometown'])
+print("Current City:", messi_dictionary['current_city'])
+print("Username:", messi_dictionary['username'])
+
+# Dictionaries 2
+
+print(f"This person's first name is {messi_dictionary['f_name']}, last name is {messi_dictionary['l_name']}, and their username is {messi_dictionary['username']}.")
+
+print(f"For security reasons, we might ask them for their hometown, which is {messi_dictionary['hometown']}.")
+
+# Dictionaries 3
+
+definitions = {
+    'python': 'Python is a programming language known for its simplicity and readability.',
+    'variable': 'A variable is a location in computer memory used to store data.',
+    'list': 'A list is a collection of items in a particular order.',
+    'method': 'A method is a function that is associated with an object.',
+    'if statement': 'An if statement allows the execution of code based on whether a condition is true or false.',
+    'dictionary': 'A dictionary is a collection of key-value pairs.',
+    'function': 'A function is a block of reusable code that performs a specific task.'
+}
+
+for word, meaning in definitions.items():
+    print(word.capitalize() + ":")
+    print(meaning)
+    print()
+
+# Dictionary 4
+
+for word, meaning in definitions.items():
+    print(f"{word.capitalize()}:\n{meaning}\n")
+
+# Dictionary 5
+
+south_carolina_counties = {
+    'Abbeville': 'Abbeville',
+    'Aiken': 'Aiken',
+    'Allendale': 'Allendale',
+    'Anderson': 'Anderson',
+    'Bamberg': 'Bamberg',
+    'Barnwell': 'Barnwell'
+}
+
+print(south_carolina_counties)
+
+# Dictionary 6
+
+south_carolina_county_list = ['Abbeville', 'Aiken', 'Allendale', 'Anderson', 'Bamberg', 'Barnwell', 'Beaufort', 'Berkeley', 'Calhoun', 'Charleston']
+
+for county in south_carolina_county_list:
+    if county in south_carolina_counties:
+        print(f"{county} is in our dictionary, and the capital/seat is {south_carolina_counties[county]}.")
+    else:
+        print(f"{county} is not in our dictionary. We will add this county shortly. Thanks!")
+
+# Dictionary 7
+
+abbeville_county = {
+    'Abbeville': 5000,
+    'Greenwood': 15000,
+    'Due West': 2000,
+    'Calhoun Falls': 1000,
+    'Honea Path': 6000
+}
+
+aiken_county = {
+    'Aiken': 30000,
+    'North Augusta': 25000,
+    'Wagener': 2000,
+    'Graniteville': 5000,
+    'New Ellenton': 3000
+}
+
+allendale_county = {
+    'Allendale': 2500,
+    'Fairfax': 2000,
+    'Sycamore': 1000,
+    'Ulmer': 500,
+    'Martin': 300
+}
+
+anderson_county = {
+    'Anderson': 35000,
+    'Clemson': 20000,
+    'Belton': 5000,
+    'Honea Path': 6000,
+    'Pendleton': 3000
+}
+
+bamberg_county = {
+    'Bamberg': 3000,
+    'Denmark': 2500,
+    'Ehrhardt': 1000,
+    'Branchville': 1500,
+    'Oliver': 800
+}
+
+sc_counties = [abbeville_county, aiken_county, allendale_county, anderson_county, bamberg_county]
+
+for county in sc_counties:
+    for city, population in county.items():
+        print(f"In {city.title()}, the current population is {population}.")
+    print()
+
+# Dictionary 8
+
+sc_counties = {
+    'Abbeville': ['Abbeville', 'Greenwood', 'Due West'],
+    'Aiken': ['Aiken', 'North Augusta', 'Wagener'],
+    'Allendale': ['Allendale', 'Fairfax', 'Sycamore'],
+    'Anderson': ['Anderson', 'Clemson', 'Belton'],
+    'Bamberg': ['Bamberg', 'Denmark', 'Ehrhardt']
+}
+
+for county, cities in sc_counties.items():
+    city_list = ', '.join(cities[:-1]) + ', and ' + cities[-1]
+    print(f"In {county}, the largest cities are {city_list}.")
+
+# User Input 1
+
+name = input("What is your name? ")
+
+print("Welcome, " + name + ", to Anderson University!")
+
+# Asking the user for the amount of money they have
+money = float(input("How much money do you have? $"))
+
+# User Input 2
+
+i3_price = 200
+i5_price = 300
+i7_price = 400
+i9_price = 600
+
+if money >= i9_price:
+    print("You can afford an i9 processor.")
+elif money >= i7_price:
+    print("You can afford an i7 processor.")
+elif money >= i5_price:
+    print("You can afford an i5 processor.")
+elif money >= i3_price:
+    print("You can afford an i3 processor.")
+else:
+    print("You can't afford any of the processors at the moment.")
+
+# User Input 3
+
+while True:
+    user_input = input("Enter an integer (type 'exit' to quit): ")
+
+    if user_input.lower() == 'exit':
+        print("Exiting the program...")
+        break
+
+    try:
+        number = int(user_input)
+        if number % 2 == 0:
+            print(f"The number {number} is even.")
+        else:
+            print(f"The number {number} is odd.")
+    except ValueError:
+        print("Invalid input.")
+
+# User Input 4
+
+favorite_cities = []
+
+while True:
+    city = input("Enter your favorite city: ")
+
+    if city.lower() == 'exit':
+        print("Exiting the program...")
+        break
+    else:
+        favorite_cities.append(city)
+
+print("Your favorite cities are:")
+for city in favorite_cities:
+    print("- " + city)
+
+# User Input 5 + BONUS
+
+valid_flavors = ['Ubuntu', 'Kubuntu', 'Xubuntu', 'Lubuntu', 'Ubuntu MATE', 'Ubuntu Budgie']
+
+user_polls = {}
+
+while True:
+    username = input("Enter your username (type 'exit' to quit): ")
+
+    if username.lower() == 'exit':
+        print("Exiting the program...")
+        break
+
+    flavor = input("Enter your favorite Ubuntu flavor: ")
+
+    if flavor in valid_flavors:
+        user_polls[username] = flavor
+    else:
+        print("You entered a non-legitimate flavor of Ubuntu.")
+        print("Valid options are:", ', '.join(valid_flavors))
+
+print("\nPoll Results - Favorite Ubuntu Flavors:")
+for username, flavor in user_polls.items():
+    print(f"{username}: {flavor}")
