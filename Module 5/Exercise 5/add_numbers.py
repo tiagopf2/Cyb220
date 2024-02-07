@@ -1,3 +1,5 @@
+# Written by Tiago Perez
+
 import math_operations
 
 result1 = math_operations.add_numbers(5, 3)
