@@ -1,3 +1,5 @@
+# Written by Tiago Perez
+
 from printing_functions import print_models, print_completed_models
 
 models = ['iphone case', 'robot pendant', 'dodecahedron']
