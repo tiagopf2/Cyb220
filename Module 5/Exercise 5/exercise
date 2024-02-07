@@ -1,0 +1,220 @@
+# Written by Tiago Perez
+
+# T-Shirt
+
+def make_shirt(size, message):
+    """Prints a sentence summarizing the size of the shirt and the message."""
+    print(f"Making a shirt of size {size} with the message: '{message}'")
+
+make_shirt("medium", "Hello, World!")
+
+make_shirt(size="large", message="Python Is Cool!")
+
+# Large Shirts
+
+def make_shirt(size="large", message="I love Python"):
+    """Prints a sentence summarizing the size of the shirt and the message."""
+    print(f"Making a shirt of size {size} with the message: '{message}'")
+
+make_shirt()
+
+make_shirt(size="medium")
+
+make_shirt(size="small", message="Keep Coding!")
+
+# Cities
+
+def describe_city(city, country="Unknown"):
+    """Prints a sentence describing the city and its country."""
+    print(f"{city} is in {country}.")
+
+describe_city("Reykjavik", "Iceland")
+describe_city("Paris", "France")
+describe_city("New York", "USA")
+
+# City Names
+
+def city_country(city, country):
+    """Returns a string formatted as 'city, country'."""
+    return f"{city}, {country}"
+
+print(city_country("Santiago", "Chile"))
+print(city_country("Tokyo", "Japan"))
+print(city_country("Berlin", "Germany"))
+
+# Album
+
+def make_album(artist_name, album_title, number_of_songs=None):
+    """Builds a dictionary describing a music album."""
+    album = {
+        'artist': artist_name,
+        'title': album_title
+    }
+    if number_of_songs:
+        album['number_of_songs'] = number_of_songs
+    return album
+
+album1 = make_album("Artist1", "Album1")
+album2 = make_album("Artist2", "Album2", 12)
+album3 = make_album("Artist3", "Album3")
+
+print(album1)
+print(album2)
+print(album3)
+
+# User Albums
+
+def make_album(artist_name, album_title, number_of_songs=None):
+    """Builds a dictionary describing a music album."""
+    album = {
+        'artist': artist_name,
+        'title': album_title
+    }
+    if number_of_songs:
+        album['number_of_songs'] = number_of_songs
+    return album
+
+while True:
+    artist = input("Enter the artist's name (or 'q' to quit): ")
+    if artist.lower() == 'q':
+        break
+
+    title = input("Enter the album's title (or 'q' to quit): ")
+    if title.lower() == 'q':
+        break
+
+    songs = input("Enter the number of songs (optional, press enter to skip): ")
+    if songs.lower() == 'q':
+        break
+    elif songs:
+        album_info = make_album(artist, title, int(songs))
+    else:
+        album_info = make_album(artist, title)
+
+    print("\nAlbum information:")
+    print(album_info)
+
+# Messages
+
+def show_messages(messages):
+    """Prints each text message in the list."""
+    for message in messages:
+        print(message)
+
+messages = [
+    "Hello!",
+    "How are you?",
+    "I hope you're doing well.",
+]
+
+show_messages(messages)
+
+# Sending Messages
+
+def show_messages(messages):
+    """Prints each text message in the list."""
+    for message in messages:
+        print(message)
+
+def send_messages(messages, sent_messages):
+
+    """Prints each text message in the list and moves
+    each message to a new list called sent_messages."""
+    while messages:
+        current_message = messages.pop(0)
+        print(current_message)
+        sent_messages.append(current_message)
+
+messages = [
+    "Hello!",
+    "How are you?",
+    "I hope you're doing well.",
+]
+
+sent_messages = []
+
+send_messages(messages, sent_messages)
+
+print("\nList of Sent Messages:")
+print(sent_messages)
+
+print("\nList of Remaining Messages:")
+print(messages)
+
+# Archived Messages
+
+def show_messages(messages):
+    """Prints each text message in the list."""
+    for message in messages:
+        print(message)
+
+def send_messages(messages, sent_messages):
+    """
+    Prints each text message in the list and moves
+    each message to a new list called sent_messages.
+    """
+    while messages:
+        current_message = messages.pop(0)
+        print(current_message)
+        sent_messages.append(current_message)
+
+messages = [
+    "Hello!",
+    "How are you?",
+    "I hope you're doing well.",
+]
+
+messages_copy = messages[:]
+
+sent_messages = []
+
+send_messages(messages_copy, sent_messages)
+
+print("\nList of Sent Messages:")
+print(sent_messages)
+
+print("\nOriginal List of Messages:")
+print(messages)
+
+# Sandwiches
+
+def make_sandwich(*items):
+    """Prints a summary of the sandwich being ordered."""
+    print("\nMaking a sandwich with the following items:")
+    for item in items:
+        print("- " + item)
+
+make_sandwich("turkey", "lettuce", "tomato")
+make_sandwich("ham", "cheese")
+make_sandwich("peanut butter", "jelly")
+
+# User Profile
+
+def build_profile(first, last, **user_info):
+    """Build a dictionary containing everything we know about a user."""
+    profile = {}
+    profile['first_name'] = first
+    profile['last_name'] = last
+    for key, value in user_info.items():
+        profile[key] = value
+    return profile
+
+my_profile = build_profile('Tiago', 'Perez', age=20, occupation='Soccer player', city='Anderson')
+
+print(my_profile)
+
+# Cars
+
+def make_car(manufacturer, model, **car_info):
+    """Stores information about a car in a dictionary."""
+    car = {
+        'manufacturer': manufacturer,
+        'model': model
+    }
+    for key, value in car_info.items():
+        car[key] = value
+    return car
+
+car = make_car('subaru', 'outback', color='blue', tow_package=True)
+
+print(car)
