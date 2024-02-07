@@ -1,3 +1,5 @@
+# Written by Tiago Perez
+
 def print_models(models):
     """Simulate printing each model."""
     print("Printing models:")
