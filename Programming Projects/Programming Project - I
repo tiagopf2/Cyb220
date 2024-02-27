@@ -1,0 +1,40 @@
+# Written by Tiago Perez
+
+import itertools
+
+def main():
+    answers = []
+
+    favorite_number = input("What is the victim's favorite number? ")
+    answers.append(favorite_number)
+
+    year_borned = input("What year was the victim born? ")
+    answers.append(year_borned)
+
+    birthplace = input("Where was the victim born? ")
+    answers.append(birthplace)
+
+    pet_name = input("What is the victim's pet's name? ")
+    answers.append(pet_name)
+
+    for i in range(len(answers)):
+        answers[i] = answers[i].title()
+
+    all_combinations = []
+    for r in range(1, len(answers) + 1):
+        for combo in itertools.permutations(answers, r):
+            all_combinations.append("".join(combo))
+            all_combinations.append("".join(combo).lower())
+
+    with open("possible_passwords.txt", "w") as f:
+        for combo in all_combinations:
+            f.write(combo + "\n")
+
+if __name__ == "__main__":
+    main()
+
+
+# Here are some more variables I could use to get more passwords combinations.
+  # Coulpe name
+  # Favourite Singer/Group
+  # Favourite Sport/Team
