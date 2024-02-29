@@ -1,8 +1,9 @@
-# Written by Tiago Perez
-
 import itertools
 
 def main():
+
+    filename = input("Enter a filename: ")
+
     answers = []
 
     favorite_number = input("What is the victim's favorite number? ")
@@ -26,15 +27,20 @@ def main():
             all_combinations.append("".join(combo))
             all_combinations.append("".join(combo).lower())
 
-    with open("possible_passwords.txt", "w") as f:
-        for combo in all_combinations:
+    unique_combinations = set(all_combinations)
+    sorted_combinations = sorted(unique_combinations)
+
+    with open(filename, "w") as f:
+        for combo in unique_combinations:
             f.write(combo + "\n")
 
 if __name__ == "__main__":
     main()
 
 
+
 # Here are some more variables I could use to get more passwords combinations.
   # Coulpe name
   # Favourite Singer/Group
   # Favourite Sport/Team
+
