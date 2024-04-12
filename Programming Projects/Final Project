@@ -1,0 +1,113 @@
+#Written by Tiago Perez
+
+import itertools
+import re
+from datetime import datetime
+
+def is_numeric(value):
+    return value.isdigit()
+
+def is_valid_year(year):
+    try:
+        year = int(year)
+        return 1900 <= year <= datetime.now().year
+    except ValueError:
+        return False
+
+def main():
+    try:
+        filename = input("Enter a filename: ")
+
+        while True:
+            try:
+                min_length = int(input("Enter the minimum length for the password: "))
+                max_length = int(input("Enter the maximum length for the password: "))
+                break
+            except ValueError:
+                print("Please enter numerical values for the minimum and maximum lengths.")
+
+        answers = []
+
+        while True:
+            favorite_number = input("What is the victim's favorite number? ")
+            if is_numeric(favorite_number):
+                answers.append(favorite_number)
+                break
+            else:
+                print("Please enter a numerical value for the favorite number.")
+
+        while True:
+            year_born = input("What year was the victim born? ")
+            if is_numeric(year_born) and is_valid_year(year_born):
+                answers.append(year_born)
+                break
+            else:
+                print("Please enter a valid year for the year of birth.")
+
+        while True:
+            birthplace = input("Where was the victim born? ")
+            if birthplace:
+                answers.append(birthplace)
+                break
+            else:
+                print("Please enter a valid birthplace.")
+
+        while True:
+            pet_name = input("What is the victim's pet's name? ")
+            if pet_name:
+                answers.append(pet_name)
+                break
+            else:
+                print("Please enter a valid pet name.")
+
+        while True:
+            couple_name = input("What is the victim's couple's name? ")
+            if couple_name:
+                answers.append(couple_name)
+                break
+            else:
+                print("Please enter a valid couple's name.")
+
+        while True:
+            favorite_singer = input("Who is the victim's favorite singer/group? ")
+            if favorite_singer:
+                answers.append(favorite_singer)
+                break
+            else:
+                print("Please enter a valid singer/group name.")
+
+        while True:
+            favorite_sport = input("What is the victim's favorite sport/team? ")
+            if favorite_sport:
+                answers.append(favorite_sport)
+                break
+            else:
+                print("Please enter a valid sport/team name.")
+
+        for i in range(len(answers)):
+            answers[i] = answers[i].title()
+
+        all_combinations = []
+        for r in range(1, len(answers) + 1):
+            for combo in itertools.permutations(answers, r):
+                password = "".join(combo)
+                if min_length <= len(password) <= max_length:
+                    all_combinations.append(password)
+                    all_combinations.append(password.lower())
+
+        unique_combinations = set(all_combinations)
+        sorted_combinations = sorted(unique_combinations)
+
+        with open(filename, "w") as f:
+            for combo in unique_combinations:
+                f.write(combo + "\n")
+
+    except ValueError as ve:
+        print("Invalid input:", ve)
+    except IOError as ioe:
+        print("File I/O error:", ioe)
+    except Exception as e:
+        print("An unexpected error occurred:", e)
+
+if __name__ == "__main__":
+    main()
