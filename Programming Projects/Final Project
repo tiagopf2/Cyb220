@@ -1,12 +1,14 @@
-#Written by Tiago Perez
+# Written by Tiago Perez
 
 import itertools
 import re
 from datetime import datetime
 
+# Function to make sure if a value is numeric.
 def is_numeric(value):
     return value.isdigit()
 
+# Function to make sure if a year is numeric and possible.
 def is_valid_year(year):
     try:
         year = int(year)
@@ -16,8 +18,10 @@ def is_valid_year(year):
 
 def main():
     try:
+        # Ask the user the name of the file.
         filename = input("Enter a filename: ")
 
+        # Asking for a minimun and a maximun length.
         while True:
             try:
                 min_length = int(input("Enter the minimum length for the password: "))
@@ -26,8 +30,10 @@ def main():
             except ValueError:
                 print("Please enter numerical values for the minimum and maximum lengths.")
 
+        # List to gather the victim's information.
         answers = []
 
+        # Questions asked to the user about the victim and making sure the value is possible    .
         while True:
             favorite_number = input("What is the victim's favorite number? ")
             if is_numeric(favorite_number):
@@ -84,9 +90,11 @@ def main():
             else:
                 print("Please enter a valid sport/team name.")
 
+        # Using captions for the first letter and combining.
         for i in range(len(answers)):
             answers[i] = answers[i].title()
 
+        # Generating all possible combinations with the information and the lenght range.
         all_combinations = []
         for r in range(1, len(answers) + 1):
             for combo in itertools.permutations(answers, r):
@@ -95,13 +103,16 @@ def main():
                     all_combinations.append(password)
                     all_combinations.append(password.lower())
 
+        # Removing duplicate combinations and shorting alphabetically
         unique_combinations = set(all_combinations)
         sorted_combinations = sorted(unique_combinations)
 
+        # Writting the possible combinations in different lines to use brute force.
         with open(filename, "w") as f:
             for combo in unique_combinations:
                 f.write(combo + "\n")
 
+    # Handling unexpected errors (Helped with AI)
     except ValueError as ve:
         print("Invalid input:", ve)
     except IOError as ioe:
@@ -109,5 +120,6 @@ def main():
     except Exception as e:
         print("An unexpected error occurred:", e)
 
+# Calling the main fuction
 if __name__ == "__main__":
     main()
