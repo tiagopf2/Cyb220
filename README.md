@@ -1,1 +1,1 @@
-# Cyb220
+# Cyb220 Practice exercises
